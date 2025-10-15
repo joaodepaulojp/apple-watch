@@ -60,3 +60,26 @@ function atualizarCorSelecionada() {
     nomeCor.toLowerCase() +
     "/imagem-2.jpeg";
 }
+
+function atualizarTamanho() {
+  const opcaoTamanhoSelecionado = document
+    .querySelector('[name="opcao-tamanho"]:checked')
+    .id.charAt(0);
+  // 0 ou 1 = 41mm ou 45mm
+
+  numTamanhoSelecionado = opcaoTamanhoSelecionado;
+
+  const tamanhoCaixa = opcoesTamanho[numTamanhoSelecionado];
+
+  tituloProduto.innerText =
+    "Pulseira loop esportiva " +
+    opcoesCores[numCorSelecionada].toLowerCase() +
+    " para caixa de " +
+    tamanhoCaixa;
+
+  if (tamanhoCaixa === "41 mm") {
+    imagemVisualizacao.classList.add("caixa-pequena");
+  } else {
+    imagemVisualizacao.classList.remove("caixa-pequena");
+  }
+}
