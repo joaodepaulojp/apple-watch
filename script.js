@@ -83,3 +83,18 @@ function atualizarTamanho() {
     imagemVisualizacao.classList.remove("caixa-pequena");
   }
 }
+
+function atualizarImagemSelecionada() {
+  const opcaoImagemSelecionada = document
+    .querySelector('[name="opcao-imagem"]:checked')
+    .id.charAt(0);
+
+  numImagemSelecionada = opcaoImagemSelecionada;
+
+  imagemVisualizacao.src =
+    "./imagens/opcoes-cores/imagens-" +
+    opcoesCores[numCorSelecionada].toLowerCase() +
+    "/imagem-" +
+    numImagemSelecionada +
+    ".jpeg";
+}
